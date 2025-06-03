@@ -2,13 +2,16 @@ FROM node:18
 
 WORKDIR /admin
 
-ENV NODE_ENV="production"
 ENV TZ="UTC"
 
+# Устанавливаем зависимости без NODE_ENV=production
 COPY package.json ./
 COPY yarn.lock ./
-
 RUN yarn install --frozen-lockfile
+
+# Только после установки зависимостей указываем production
+ENV NODE_ENV="production"
+
 COPY . .
 
 RUN npm i -g typescript
