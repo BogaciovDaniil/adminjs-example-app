@@ -8,7 +8,7 @@ ENV TZ="UTC"
 COPY package.json ./
 COPY yarn.lock ./
 
-RUN yarn install --frozen-lockfile --production
+RUN yarn install --frozen-lockfile
 COPY . .
 
 RUN npm i -g typescript
