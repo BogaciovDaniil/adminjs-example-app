@@ -6,7 +6,7 @@
   "type": "module",
   "license": "ISC",
   "engines": {
-    "node": ">=18"
+    "node": "18.x"
   },
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx",
